@@ -57,7 +57,7 @@ Method: POST
 Content-Type: Não aplicável  
 Body: Não aplicável  
 Response:  
-```json
+```text
     200: {  
             "message": "200 OK",
             "success": true
@@ -69,7 +69,7 @@ Endpoint: http://0.0.0.0:8081/webcam/config
 Method: POST  
 Content-Type: application/json  
 Body:   
-```json
+```text
 {
     "preview": str: 1 ou 0,
     "exposicao": str,
@@ -80,7 +80,7 @@ Body:
 ```
 
 Response:  
-```json
+```text
     200: {  
             "message": "200 OK",
             "success": true
@@ -95,7 +95,7 @@ Method: POST
 Content-Type: Não aplicável  
 Body: Não aplicável  
 Response:  
-```json
+```text
     200: {  
             "message": "200 OK",
             "success": true
@@ -108,7 +108,7 @@ Method: POST
 Content-Type: Não aplicável  
 Body: Não aplicável  
 Response:  
-```json
+```text
     200: {  
             "message": "200 OK",
             "success": true
@@ -128,7 +128,7 @@ Method: GET
 Content-Type: Não aplicável  
 Body: Não aplicável  
 Response:  
-```json
+```text
     200: {
             "data": [{
                 "classes": [
