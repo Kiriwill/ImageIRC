@@ -1,7 +1,7 @@
 # HTTP YoloV3 Object Recognizer - HTTPYOR
--------------------------------------------------------
 
-    A aplicação consiste na identificação de objetos a partir da aplicação de uma rede neural do tipo YoloV3 e de imagens de webcam. A rede e a câmera são controladas por requests HTTP.
+    A aplicação consiste na identificação de objetos a partir da aplicação de uma rede neural do tipo YoloV3 
+    e de imagens de webcam. A rede e a câmera são controladas por requests HTTP.  
 
 ## Instalação
 
