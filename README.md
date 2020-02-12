@@ -1,40 +1,40 @@
 # HTTP YoloV3 Object Recognizer - HTTPYOR
 -------------------------------------------------------
 
->> A aplica��o consiste na identifica��o de objetos a partir da aplica��o de uma rede neural do tipo YoloV3 e de imagens de webcam. A rede e a c�mera s�o controladas por requests HTTP.
+>> A aplicação consiste na identificação de objetos a partir da aplicação de uma rede neural do tipo YoloV3 e de imagens de webcam. A rede e a câmera são controladas por requests HTTP.
 
-## Instala��o
+## Instalação
 
-Use [pip](https://pip.pypa.io/en/stable/) para instalar as dependencias e rodar a aplica��o:
+Use [pip](https://pip.pypa.io/en/stable/) para instalar as dependencias e rodar a aplicação:
 
 ```bash
 pip install -r requirements.txt
 python app.py
 ```
 
-ou utilize o Docker (� preciso configurar o xhost para dar acesso a camera):
+ou utilize o Docker (é preciso configurar o xhost para dar acesso a camera):
 
 ```bash
 sudo docker build -t yolov3cv .
 sudo docker run --privileged --device=/dev/video0:/dev/video0 -p 8081:8081 yolov3cv
 ```
 
-## Configura��o
-As configura��es da rede est�o contidas na pasta cfg. O arquivo yolov3.cfg cont�m os parametros para o funcionamento da rede e o arquivo net_config.cfg os parametros para as configura��es o tratamento das imagens de entrada e dos resultados da rede. Alguns deles:
+## Configuração
+As configurações da rede estão contidas na pasta cfg. O arquivo yolov3.cfg contém os parametros para o funcionamento da rede e o arquivo net_config.cfg os parametros para as configurações o tratamento das imagens de entrada e dos resultados da rede. Alguns deles:
 
-threshold: Limite de confian�a para atribuir uma classe a uma previs�o.
-size_net_input: dimens�es da entrada do arquivo blob (deve ser multiplo de 32)
-ratios: raz�o das dimens�es da imagem (para redimensionamento)
+threshold: Limite de confiança para atribuir uma classe a uma previsão.
+size_net_input: dimensões da entrada do arquivo blob (deve ser multiplo de 32)
+ratios: razão das dimensões da imagem (para redimensionamento)
 
 ## Uso
 
-H� dois tipos de servi�os dispon�veis: webcam e modelo. Ambos s�o controlados por seus respectivos endpoints.
-As imagens do modelo s�o armazenadas na pasta mock_db/images com o timestamp como nome. O delay para grava��o � de 5seg.
-Os exemplos a seguir s�o para uso local.
+Há dois tipos de serviços disponíveis: webcam e modelo. Ambos são controlados por seus respectivos endpoints.
+As imagens do modelo são armazenadas na pasta mock_db/images com o timestamp como nome. O delay para gravação é de 5seg.
+Os exemplos a seguir são para uso local.
 
 ### Camera
 
-#### Ativa��o
+#### Ativação
 Endpoint: http://0.0.0.0:8081/webcam/ativar
 Method: POST
 Content-Type: application/json ou ausente
@@ -48,18 +48,18 @@ Response:
             "success": true
         }
 
-#### Desativa��o
+#### Desativação
 Endpoint: http://0.0.0.0:8081/webcam/desativar
 Method: POST
-Content-Type: N�o aplic�vel
-Body: N�o aplic�vel
+Content-Type: Não aplicável
+Body: Não aplicável
 Response:
     200: {
             "message": "200 OK",
             "success": true
         }
 
-#### Configura��o
+#### Configuração
 Endpoint: http://0.0.0.0:8081/webcam/config
 Method: POST
 Content-Type: application/json
@@ -79,22 +79,22 @@ Response:
 
 ### Modelo
 
-#### Ativa��o
+#### Ativação
 Endpoint: http://0.0.0.0:8081/model/ativar
 Method: POST
-Content-Type: N�o aplic�vel
-Body: N�o aplic�vel
+Content-Type: Não aplicável
+Body: Não aplicável
 Response:
     200: {
             "message": "200 OK",
             "success": true
         }
 
-#### Desativa��o
+#### Desativação
 Endpoint: http://0.0.0.0:8081/model/desativar
 Method: POST
-Content-Type: N�o aplic�vel
-Body: N�o aplic�vel
+Content-Type: Não aplicável
+Body: Não aplicável
 Response:
     200: {
             "message": "200 OK",
@@ -111,8 +111,8 @@ Endpoint: http://0.0.0.0:8081/model/consultar/{{timestamp}}
         Por ano: http://0.0.0.0:8081/model/consultar/2020 
 
 Method: GET
-Content-Type: N�o aplic�vel
-Body: N�o aplic�vel
+Content-Type: Não aplicável
+Body: Não aplicável
 Response:
     200: {
             "data": [{
