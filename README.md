@@ -45,11 +45,13 @@ Body: ausente ou
 }
 ```
 
-Response:  
+Response:
+```text
     200: {  
             "message": "200 OK",  
             "success": true  
         }  
+```
 
 #### Desativação
 Endpoint: http://0.0.0.0:8081/webcam/desativar  
