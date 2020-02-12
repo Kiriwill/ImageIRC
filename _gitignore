@@ -1,0 +1,41 @@
+
+# Byte-compiled / optimized / DLL 
+__pycache__/
+*.py[cod]
+*$py.class
+cov_html
+
+# Distribution / packaging
+.Python
+env/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+.vscode/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# virtualenv
+venv/
+ENV/
