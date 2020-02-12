@@ -39,7 +39,7 @@ Endpoint: http://0.0.0.0:8081/webcam/ativar
 Method: POST  
 Content-Type: application/json ou ausente  
 Body: ausente ou 
-```json
+```text
 {  
     "preview": str: 1 ou 0  
 }
