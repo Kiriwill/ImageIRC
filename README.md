@@ -1,7 +1,7 @@
 # HTTP YoloV3 Object Recognizer - HTTPYOR
 -------------------------------------------------------
 
-> A aplicação consiste na identificação de objetos a partir da aplicação de uma rede neural do tipo YoloV3 e de imagens de webcam. A rede e a câmera são controladas por requests HTTP.
+    A aplicação consiste na identificação de objetos a partir da aplicação de uma rede neural do tipo YoloV3 e de imagens de webcam. A rede e a câmera são controladas por requests HTTP.
 
 ## Instalação
 
@@ -38,9 +38,12 @@ Os exemplos a seguir são para uso local.
 Endpoint: http://0.0.0.0:8081/webcam/ativar  
 Method: POST  
 Content-Type: application/json ou ausente  
-Body: ausente ou {  
+Body: ausente ou 
+```json
+{  
     "preview": str: 1 ou 0  
-}  
+}
+```
 
 Response:  
     200: {  
@@ -49,71 +52,83 @@ Response:
         }  
 
 #### Desativação
-Endpoint: http://0.0.0.0:8081/webcam/desativar
-Method: POST
-Content-Type: Não aplicável
-Body: Não aplicável
-Response:
-    200: {
+Endpoint: http://0.0.0.0:8081/webcam/desativar  
+Method: POST  
+Content-Type: Não aplicável  
+Body: Não aplicável  
+Response:  
+```json
+    200: {  
             "message": "200 OK",
             "success": true
         }
+```  
 
 #### Configuração
-Endpoint: http://0.0.0.0:8081/webcam/config
-Method: POST
-Content-Type: application/json
-Body: {
+Endpoint: http://0.0.0.0:8081/webcam/config  
+Method: POST  
+Content-Type: application/json  
+Body:   
+```json
+{
     "preview": str: 1 ou 0,
     "exposicao": str,
     "foco": str,
     "fps": str,
     "brilho": str
 } 
+```
 
-Response:
-    200: {
+Response:  
+```json
+    200: {  
             "message": "200 OK",
             "success": true
         }
+```
 
 ### Modelo
 
 #### Ativação
-Endpoint: http://0.0.0.0:8081/model/ativar
-Method: POST
-Content-Type: Não aplicável
-Body: Não aplicável
-Response:
-    200: {
+Endpoint: http://0.0.0.0:8081/model/ativar  
+Method: POST  
+Content-Type: Não aplicável  
+Body: Não aplicável  
+Response:  
+```json
+    200: {  
             "message": "200 OK",
             "success": true
         }
+```
 
 #### Desativação
-Endpoint: http://0.0.0.0:8081/model/desativar
-Method: POST
-Content-Type: Não aplicável
-Body: Não aplicável
-Response:
-    200: {
+Endpoint: http://0.0.0.0:8081/model/desativar  
+Method: POST  
+Content-Type: Não aplicável  
+Body: Não aplicável  
+Response:  
+```json
+    200: {  
             "message": "200 OK",
             "success": true
         }
+```
 
 #### Consultar
-Endpoint: http://0.0.0.0:8081/model/consultar/{{timestamp}}
-    Timetamp no formato "%m_%d_%YT%H_%M_%S"
+Endpoint: http://0.0.0.0:8081/model/consultar/{{timestamp}}  
+Timetamp no formato "%m_%d_%YT%H_%M_%S"
     
     Exemplos:
         Tempo exato: http://0.0.0.0:8081/model/consultar/12_10_1989T14_40_34
         Por dia: http://0.0.0.0:8081/model/consultar/06-10
         Por ano: http://0.0.0.0:8081/model/consultar/2020 
 
-Method: GET
-Content-Type: Não aplicável
-Body: Não aplicável
-Response:
+Method: GET  
+Content-Type: Não aplicável  
+Body: Não aplicável  
+Response:  
+```json
     200: {
             "data": [{
                 "classes": [
@@ -150,3 +165,4 @@ Response:
             "message": "200 OK",
             "success": true
         }
+```
