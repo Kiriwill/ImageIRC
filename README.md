@@ -35,7 +35,7 @@ Os exemplos a seguir são para uso local.
 ### Camera
 
 #### Ativação
-Endpoint: http://0.0.0.0:8081/webcam/ativar \n
+Endpoint: http://0.0.0.0:8081/webcam/ativar
 Method: POST
 Content-Type: application/json ou ausente
 Body: ausente ou {
